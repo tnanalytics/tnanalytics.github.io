@@ -1,0 +1,1001 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="description"
+    content="Retail Analytics — Case Study da Terra Nova Analytics. Da análise de vendas à decisão de negócio."
+  >
+  <meta name="author" content="Terra Nova Analytics">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Retail Analytics | Terra Nova Analytics">
+  <meta
+    property="og:description"
+    content="Da análise de vendas à decisão de negócio."
+  >
+
+  <title>Retail Analytics | Terra Nova Analytics</title>
+
+  <link rel="icon" href="assets/logo-globe.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Case Study */
+    .case-study-hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 82% 40%, rgba(115, 211, 199, 0.13), transparent 48%),
+        linear-gradient(135deg, var(--navy-dark), var(--navy));
+      color: var(--white);
+    }
+
+    .case-study-hero-inner {
+      min-height: 590px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+      align-items: center;
+      gap: 70px;
+      padding-block: 90px;
+    }
+
+    .case-study-hero-copy {
+      max-width: 760px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .case-study-hero h1 {
+      margin: 0;
+      color: var(--white);
+      font-size: clamp(3rem, 5vw, 5rem);
+      line-height: 1.03;
+      letter-spacing: -0.055em;
+    }
+
+    .case-study-hero h1 span {
+      display: block;
+      color: var(--cyan);
+    }
+
+    .case-study-lead {
+      max-width: 700px;
+      margin: 30px 0 0;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 1.12rem;
+      line-height: 1.8;
+    }
+
+    .case-study-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .case-study-meta span {
+      padding: 7px 12px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 999px;
+      color: rgba(255,255,255,0.86);
+      font-size: 0.76rem;
+      font-weight: 700;
+    }
+
+    .case-study-hero-mark {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .case-study-hero-mark-frame {
+      width: min(350px, 100%);
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(115, 211, 199, 0.22);
+      border-radius: 50%;
+    }
+
+    .case-study-hero-mark img {
+      width: 62%;
+    }
+
+    .case-section-intro {
+      max-width: 760px;
+      margin-bottom: 48px;
+    }
+
+    .case-section-intro p:last-child {
+      margin-bottom: 0;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    .case-question {
+      margin: 0 0 24px;
+      color: var(--navy);
+      font-size: clamp(1.7rem, 3vw, 2.45rem);
+      line-height: 1.2;
+      letter-spacing: -0.035em;
+    }
+
+    .case-grid-two {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .case-card {
+      padding: 30px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .case-card h3 {
+      margin: 0 0 14px;
+      color: var(--navy);
+      font-size: 1.2rem;
+    }
+
+    .case-card p {
+      margin: 0;
+      color: var(--text-muted);
+    }
+
+    .case-data-strip {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 1px;
+      overflow: hidden;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .case-kpi {
+      min-height: 150px;
+      padding: 25px;
+      background: var(--white);
+    }
+
+    .case-kpi-label {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .case-kpi-value {
+      display: block;
+      color: var(--navy);
+      font-size: clamp(1.45rem, 2.5vw, 2.15rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+    }
+
+    .case-figure {
+      margin: 45px 0 0;
+      padding: 18px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .case-figure img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .case-figure figcaption {
+      padding: 18px 8px 4px;
+      color: var(--text-muted);
+      font-size: 0.84rem;
+    }
+
+    .case-flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-top: 30px;
+    }
+
+    .case-flow span {
+      padding: 9px 13px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--navy);
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .case-flow b {
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    .case-table-wrap {
+      overflow-x: auto;
+      margin-top: 35px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .case-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--white);
+    }
+
+    .case-table th,
+    .case-table td {
+      padding: 17px 20px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+    }
+
+    .case-table th {
+      color: var(--navy);
+      background: var(--surface);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+
+    .case-table td {
+      color: var(--text-muted);
+    }
+
+    .case-table td:not(:first-child) {
+      white-space: nowrap;
+      text-align: right;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .case-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .case-highlight {
+      padding: 42px;
+      background:
+        linear-gradient(145deg, #f5fbfa, var(--white));
+      border: 1px solid rgba(15, 127, 114, 0.28);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .case-highlight-value {
+      margin: 0 0 12px;
+      color: var(--green);
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 700;
+      letter-spacing: -0.05em;
+      line-height: 1;
+    }
+
+    .case-highlight p {
+      max-width: 780px;
+      margin: 0;
+      color: var(--text-muted);
+    }
+
+    .stats-panel {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: 35px;
+      overflow: hidden;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .stats-value {
+      min-height: 150px;
+      padding: 28px;
+      background: var(--white);
+    }
+
+    .stats-value strong {
+      display: block;
+      color: var(--navy);
+      font-size: 2rem;
+      letter-spacing: -0.04em;
+    }
+
+    .stats-value span {
+      display: block;
+      margin-top: 8px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .video-wrapper {
+      margin-top: 38px;
+      overflow: hidden;
+      background: var(--navy-dark);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .video-wrapper video {
+      display: block;
+      width: 100%;
+      max-height: 720px;
+    }
+
+    .video-placeholder {
+      padding: 90px 30px;
+      color: rgba(255,255,255,0.72);
+      text-align: center;
+    }
+
+    .attention-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 40px;
+    }
+
+    .attention-card {
+      padding: 27px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .attention-card strong {
+      display: block;
+      margin-bottom: 9px;
+      color: var(--green);
+      font-size: 0.9rem;
+    }
+
+    .attention-card span {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .technology-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 15px;
+      margin-top: 35px;
+    }
+
+    .technology-item {
+      padding: 24px 18px;
+      border-top: 2px solid var(--green);
+      background: var(--white);
+    }
+
+    .technology-item strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--navy);
+    }
+
+    .technology-item span {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    .case-result {
+      padding-block: 120px;
+      background: var(--navy-dark);
+      color: var(--white);
+    }
+
+    .case-result-inner {
+      max-width: 900px;
+    }
+
+    .case-result h2 {
+      margin: 0 0 28px;
+      color: var(--white);
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 1.08;
+      letter-spacing: -0.05em;
+    }
+
+    .case-result p {
+      max-width: 800px;
+      color: rgba(255,255,255,0.76);
+      font-size: 1.08rem;
+    }
+
+    .case-result-flow {
+      margin-top: 42px;
+      color: var(--cyan);
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .case-result-quote {
+      margin-top: 55px;
+      padding-left: 25px;
+      border-left: 2px solid var(--green);
+      color: var(--white);
+      font-size: 1.25rem;
+      line-height: 1.6;
+    }
+
+    .case-back {
+      margin-top: 45px;
+    }
+
+    @media (max-width: 1050px) {
+      .case-data-strip {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .attention-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .technology-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 850px) {
+      .case-study-hero-inner {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        padding-block: 75px;
+      }
+
+      .case-study-hero-mark {
+        justify-content: flex-start;
+      }
+
+      .case-grid-two {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .technology-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .case-data-strip {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .case-kpi {
+        min-height: 130px;
+      }
+
+      .case-highlight {
+        padding: 30px;
+      }
+
+      .attention-grid,
+      .technology-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Saltar para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Terra Nova Analytics — página inicial">
+        <img class="brand-logo" src="assets/logo-globe.png" alt="" aria-hidden="true">
+        <span class="brand-name">Terra Nova Analytics</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Navegação principal">
+        <a href="index.html#about">Sobre</a>
+        <a href="index.html#services">Serviços</a>
+        <a href="index.html#projects">Projetos</a>
+        <a href="index.html#expertise">Competências</a>
+        <a href="index.html#contact">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <section class="case-study-hero" aria-labelledby="case-title">
+      <div class="container case-study-hero-inner">
+        <div class="case-study-hero-copy">
+          <p class="eyebrow">CASE STUDY · TERRA NOVA ANALYTICS</p>
+
+          <h1 id="case-title">
+            Retail Analytics
+            <span>Da análise de vendas à decisão de negócio.</span>
+          </h1>
+
+          <p class="case-study-lead">
+            Como transformar dados de vendas em evidência para compreender
+            onde o negócio cria valor e onde merece concentrar a atenção?
+          </p>
+
+          <div class="case-study-meta" aria-label="Tecnologias e âmbito">
+            <span>Data Analytics</span>
+            <span>Estatística</span>
+            <span>SQL</span>
+            <span>Python</span>
+            <span>Power BI</span>
+          </div>
+        </div>
+
+        <div class="case-study-hero-mark" aria-hidden="true">
+          <div class="case-study-hero-mark-frame">
+            <img src="assets/logo-globe.png" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="challenge" aria-labelledby="challenge-title">
+      <div class="container">
+        <div class="case-section-intro">
+          <p class="section-label">01 · O desafio</p>
+          <h2 class="case-question" id="challenge-title">
+            Uma análise de vendas não deve limitar-se a responder quanto foi vendido.
+          </h2>
+          <p>
+            Para apoiar decisões de negócio, é necessário compreender onde está
+            o valor, como ele é distribuído e que padrões justificam uma
+            investigação mais aprofundada.
+          </p>
+          <p>
+            O desafio foi construir uma estrutura analítica capaz de passar da
+            visão global das vendas para a análise da rentabilidade, categorias,
+            produtos e segmentos de decisão, utilizando os dados para identificar
+            diferenças relevantes e formular hipóteses de negócio.
+          </p>
+        </div>
+
+        <div class="case-flow" aria-label="Progressão analítica">
+          <span>Dados</span><b>→</b>
+          <span>Métricas</span><b>→</b>
+          <span>Desempenho</span><b>→</b>
+          <span>Rentabilidade</span><b>→</b>
+          <span>Segmentação</span><b>→</b>
+          <span>Valor</span><b>→</b>
+          <span>Decisão</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="data" aria-labelledby="data-title">
+      <div class="container">
+        <div class="case-section-intro">
+          <p class="section-label">02 · O conjunto de dados</p>
+          <h2 class="case-question" id="data-title">
+            Uma base transaccional para analisar desempenho e rentabilidade.
+          </h2>
+          <p>
+            O projecto utiliza dados transaccionais fictícios de retalho,
+            organizados para permitir a análise conjunta de transacções,
+            produtos, categorias, receita, lucro, margem e unidades vendidas.
+          </p>
+        </div>
+
+        <div class="case-grid-two">
+          <article class="case-card">
+            <h3>Período de análise</h3>
+            <p>01 Jan 2024 – 01 Dec 2025</p>
+          </article>
+
+          <article class="case-card">
+            <h3>Dimensão</h3>
+            <p>75K transacções</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="overview" aria-labelledby="overview-title">
+      <div class="container">
+        <div class="case-section-intro">
+          <p class="section-label">03 · Visão global do negócio</p>
+          <h2 class="case-question" id="overview-title">
+            A visão global estabelece a escala. A análise procura explicar o que está por trás dela.
+          </h2>
+        </div>
+
+        <div class="case-data-strip">
+          <div class="case-kpi">
+            <span class="case-kpi-label">Revenue</span>
+            <strong class="case-kpi-value">85,51 M€</strong>
+          </div>
+          <div class="case-kpi">
+            <span class="case-kpi-label">Profit</span>
+            <strong class="case-kpi-value">29,41 M€</strong>
+          </div>
+          <div class="case-kpi">
+            <span class="case-kpi-label">Profit Margin</span>
+            <strong class="case-kpi-value">34,39%</strong>
+          </div>
+          <div class="case-kpi">
+            <span class="case-kpi-label">Transactions</span>
+            <strong class="case-kpi-value">75 K</strong>
+          </div>
+          <div class="case-kpi">
+            <span class="case-kpi-label">Revenue YoY</span>
+            <strong class="case-kpi-value">0,75%</strong>
+          </div>
+        </div>
+
+        <figure class="case-figure">
+          <img
+            src="assets/painel-executivo-retail-analytics.png"
+            alt="Executive Overview de Retail Analytics com indicadores de receita, lucro, transacções, margem e evolução temporal"
+          >
+          <figcaption>
+            Executive Overview — desempenho de vendas e rentabilidade,
+            01 Jan 2024 – 01 Dec 2025.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="profitability" aria-labelledby="profitability-title">
+      <div class="container">
+        <div class="case-section-intro">
+          <p class="section-label">04 · Da receita à rentabilidade</p>
+          <h2 class="case-question" id="profitability-title">
+            Vender mais significa necessariamente criar mais valor?
+          </h2>
+          <p>
+            A análise temporal conjunta de Revenue, Profit e Margin permite
+            observar que a receita, isoladamente, não descreve a qualidade
+            económica do desempenho.
+          </p>
+          <p>
+            A leitura da rentabilidade exige considerar simultaneamente o
+            volume de negócio, o lucro, a margem e a estrutura das categorias.
+          </p>
+        </div>
+
+        <div class="case-card">
+          <h3>Leitura analítica</h3>
+          <p>
+            A receita apresenta uma evolução relativamente estável, enquanto
+            o lucro evidencia maior variabilidade. A margem mantém-se em torno
+            dos 34–35%, justificando a passagem da análise global para a
+            comparação entre categorias e produtos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="categories" aria-labelledby="categories-title">
+      <div class="container">
+        <div class="case-section-intro">
+          <p class="section-label">05 · Categorias</p>
+          <h2 class="case-question" id="categories-title">
+            Onde está o valor entre as categorias?
+          </h2>
+          <p>
+            A análise cruza Revenue e Margin para observar diferentes perfis
+            económicos. O objectivo não é apenas criar um ranking, mas
+            identificar estruturas de desempenho que merecem investigação.
+          </p>
+        </div>
+
+        <div class="case-grid-two">
+          <article class="case-card">
+            <h3>Maior receita e margem</h3>
+            <p>
+              Beauty, Clothing e Accessories apresentam simultaneamente
+              níveis elevados de receita e margem.
+            </p>
+          </article>
+
+          <article class="case-card">
+            <h3>Perfis a investigar</h3>
+            <p>
+              Garden apresenta um perfil favorável, enquanto Food, Home
+              Appliances e Electronics revelam margens relativamente inferiores.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="products" aria-labelledby="products-title">
+      <div class="container">
+        <div class="case-section-intro">
+          <p class="section-label">06 · Da categoria ao produto</p>
+          <h2 class="case-question" id="products-title">
+            Como identificar diferentes perfis de decisão ao nível do produto?
+          </h2>
+          <p>
+            Cada produto foi comparado com as médias de Revenue e Margin,
+            permitindo construir quatro segmentos analíticos de decisão.
+          </p>
+        </div>
+
+        <div class="case-table-wrap">
+          <table class="case-table">
+            <thead>
+              <tr>
+                <th>Segmento</th>
+                <th>Revenue</th>
+                <th>Profit</th>
+                <th>Margin</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Core / Preserve</td>
+                <td>40,61 M€</td>
+                <td>16,44 M€</td>
+                <td>40,49%</td>
+              </tr>
+              <tr>
+                <td>High Profit / Margin Opportunity</td>
+                <td>21,33 M€</td>
+                <td>6,14 M€</td>
+                <td>28,78%</td>
+              </tr>
+              <tr>
+                <td>Low Priority</td>
+                <td>17,16 M€</td>
+                <td>4,33 M€</td>
+                <td>25,21%</td>
+              </tr>
+              <tr>
+                <td>Growth Opportunity</td>
+                <td>6,41 M€</td>
+                <td>2,50 M€</td>
+                <td>39,02%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="opportunity" aria-labelledby="opportunity-title">
+      <div class="container">
+        <div class="case-section-intro">
+          <p class="section-label">07 · Oportunidades</p>
+          <h2 class="case-question" id="opportunity-title">
+            Identificar oportunidades sem transformar padrões em decisões automáticas.
+          </h2>
+        </div>
+
+        <div class="case-highlight">
+          <p class="case-highlight-value">6,41 M€ · 39,02%</p>
+          <p>
+            O segmento <strong>Growth Opportunity</strong> combina uma receita
+            de 6,41 M€ com uma margem de 39,02%, próxima da observada em
+            Core / Preserve (40,49%). Este padrão constitui uma hipótese que
+            merece investigação, e não uma recomendação automática de investimento.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="statistics" aria-labelledby="statistics-title">
+      <div class="container">
+        <div class="case-section-intro">
+          <p class="section-label">08 · Validação estatística</p>
+          <h2 class="case-question" id="statistics-title">
+            As diferenças entre segmentos são apenas visuais?
+          </h2>
+          <p>
+            O Profit por transacção apresenta uma distribuição assimétrica.
+            Por isso, a comparação foi realizada com o teste de Kruskal–Wallis,
+            seguida de comparações par-a-par com correcção de Holm–Bonferroni.
+          </p>
+        </div>
+
+        <div class="stats-panel">
+          <div class="stats-value">
+            <strong>H(3) = 28 610</strong>
+            <span>Kruskal–Wallis</span>
+          </div>
+          <div class="stats-value">
+            <strong>p &lt; 0,001</strong>
+            <span>Significância estatística</span>
+          </div>
+          <div class="stats-value">
+            <strong>ε² = 0,38</strong>
+            <span>Tamanho do efeito</span>
+          </div>
+        </div>
+
+        <div class="case-card" style="margin-top: 24px;">
+          <h3>Medianas de Profit por transacção</h3>
+          <p>
+            Core / Preserve: 483,49 € · High Profit / Margin Opportunity:
+            344,43 € · Growth Opportunity: 144,49 € · Low Priority: 124,73 €.
+            Todas as seis comparações par-a-par foram significativas após
+            correcção de Holm.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="interactive" aria-labelledby="interactive-title">
+      <div class="container">
+        <div class="case-section-intro">
+          <p class="section-label">09 · Exploração interactiva</p>
+          <h2 class="case-question" id="interactive-title">
+            Explorar os factores associados à rentabilidade.
+          </h2>
+          <p>
+            A análise Key Influencers, disponível no Power BI, permite explorar
+            factores associados a níveis superiores de lucro médio por transacção.
+            Entre os factores identificados estão a pertença aos segmentos
+            Core / Preserve e High Profit / Margin Opportunity, o número de
+            unidades vendidas e níveis de margem superiores.
+          </p>
+          <p>
+            Estes padrões são associações observadas nos dados e devem ser
+            utilizados para exploração e formulação de hipóteses, não como
+            relações de causa e efeito.
+          </p>
+        </div>
+
+        <h3>Vídeo — análise interactiva</h3>
+
+        <div class="video-wrapper">
+          <!-- Replace the source below with the final video filename. -->
+          <div class="video-placeholder">
+            <p>Vídeo da análise interactiva — ficheiro a integrar.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="attention" aria-labelledby="attention-title">
+      <div class="container">
+        <div class="case-section-intro">
+          <p class="section-label">10 · Da evidência à atenção empresarial</p>
+          <h2 class="case-question" id="attention-title">
+            A análise orienta a atenção; não substitui a decisão.
+          </h2>
+          <p>
+            Os resultados permitem organizar diferentes tipos de atenção
+            empresarial, mantendo a distinção entre evidência, hipótese e decisão.
+          </p>
+        </div>
+
+        <div class="attention-grid">
+          <article class="attention-card">
+            <strong>Preservar</strong>
+            <span>Proteger o desempenho dos produtos com perfil Core.</span>
+          </article>
+          <article class="attention-card">
+            <strong>Desenvolver</strong>
+            <span>Avaliar produtos com potencial de melhoria de desempenho.</span>
+          </article>
+          <article class="attention-card">
+            <strong>Reavaliar</strong>
+            <span>Questionar produtos com menor contribuição relativa.</span>
+          </article>
+          <article class="attention-card">
+            <strong>Investigar</strong>
+            <span>Testar hipóteses sobre padrões que justificam aprofundamento.</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="technology" aria-labelledby="technology-title">
+      <div class="container">
+        <div class="case-section-intro">
+          <p class="section-label">11 · Tecnologia</p>
+          <h2 class="case-question" id="technology-title">
+            Tecnologia ao serviço da análise.
+          </h2>
+          <p>
+            Cada ferramenta desempenha uma função específica no pipeline
+            analítico, desde a preparação dos dados até à comunicação dos resultados.
+          </p>
+        </div>
+
+        <div class="technology-grid">
+          <div class="technology-item">
+            <strong>SQL</strong>
+            <span>Exploração e preparação dos dados.</span>
+          </div>
+          <div class="technology-item">
+            <strong>Python</strong>
+            <span>Tratamento, EDA e validação estatística.</span>
+          </div>
+          <div class="technology-item">
+            <strong>Power Query</strong>
+            <span>Transformação e preparação no Power BI.</span>
+          </div>
+          <div class="technology-item">
+            <strong>DAX</strong>
+            <span>Construção das métricas analíticas.</span>
+          </div>
+          <div class="technology-item">
+            <strong>Power BI</strong>
+            <span>Visualização, exploração e comunicação.</span>
+          </div>
+        </div>
+
+        <div class="case-flow" aria-label="Pipeline analítico">
+          <span>Dados</span><b>→</b>
+          <span>Qualidade</span><b>→</b>
+          <span>Transformação</span><b>→</b>
+          <span>Métricas</span><b>→</b>
+          <span>Análise</span><b>→</b>
+          <span>Visualização</span><b>→</b>
+          <span>Decisão</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-result" id="result" aria-labelledby="result-title">
+      <div class="container case-result-inner">
+        <p class="section-label" style="color: var(--cyan);">12 · Resultado</p>
+
+        <h2 id="result-title">
+          Uma análise que transforma dados em evidência para decisão.
+        </h2>
+
+        <p>
+          O projecto estabelece uma progressão que vai além da apresentação
+          de KPIs: relaciona desempenho, rentabilidade, tempo, categorias,
+          margem e segmentos para identificar diferenças, oportunidades e
+          questões que merecem investigação.
+        </p>
+
+        <div class="case-result-flow">
+          Dados → Métricas → Desempenho → Rentabilidade → Segmentação → Valor → Decisão
+        </div>
+
+        <p class="case-result-quote">
+          O resultado não é uma decisão produzida pelo algoritmo.
+          É uma decisão mais bem informada pelos dados.
+        </p>
+
+        <div class="case-back">
+          <a class="button button-outline" href="index.html#projects">
+            ← Voltar aos projectos
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p><strong>Terra Nova Analytics</strong></p>
+        <p>Inteligência científica para decisões sustentáveis.</p>
+      </div>
+      <div class="footer-meta">
+        <p>© 2026 Terra Nova Analytics</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
