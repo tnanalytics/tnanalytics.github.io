@@ -95,10 +95,8 @@ a {
 ------------------------------------------------------------ */
 
 .container {
-  width: min(
-    calc(100% - 48px),
-    var(--container)
-  );
+  width: min(calc(100% - 48px),
+      var(--container));
 
   margin-inline: auto;
 }
@@ -223,16 +221,12 @@ a {
   align-items: center;
 
   background:
-    radial-gradient(
-      circle at 82% 45%,
+    radial-gradient(circle at 82% 45%,
       rgba(115, 211, 199, 0.13),
-      transparent 50%
-    ),
-    linear-gradient(
-      135deg,
+      transparent 50%),
+    linear-gradient(135deg,
       var(--navy-dark),
-      var(--navy)
-    );
+      var(--navy));
 
   color: var(--white);
 }
@@ -244,8 +238,7 @@ a {
   display: grid;
 
   grid-template-columns:
-    minmax(0, 1.2fr)
-    minmax(320px, 0.8fr);
+    minmax(0, 1.2fr) minmax(320px, 0.8fr);
 
   align-items: center;
 
@@ -478,7 +471,7 @@ a {
   line-height: 1.12;
 }
 
-.section-heading > p:last-child {
+.section-heading>p:last-child {
   max-width: 650px;
 
   margin: 20px 0 0;
@@ -497,8 +490,7 @@ a {
   display: grid;
 
   grid-template-columns:
-    minmax(0, 0.9fr)
-    minmax(0, 1.1fr);
+    minmax(0, 0.9fr) minmax(0, 1.1fr);
 
   gap: 90px;
 }
@@ -677,11 +669,9 @@ a {
 
 .project-featured {
   background:
-    linear-gradient(
-      145deg,
+    linear-gradient(145deg,
       #f5fbfa,
-      var(--white)
-    );
+      var(--white));
 
   border-color: rgba(15, 127, 114, 0.28);
 }
@@ -742,19 +732,6 @@ a {
   font-weight: 700;
 }
 
-.project-link {
-  display: inline-block;
-  margin-top: 22px;
-  color: var(--green);
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.project-link:hover {
-  color: var(--green-dark);
-}
-
 
 /* ------------------------------------------------------------
    Skills
@@ -762,11 +739,9 @@ a {
 
 .section-dark {
   background:
-    linear-gradient(
-      135deg,
+    linear-gradient(135deg,
       var(--navy-dark),
-      var(--navy)
-    );
+      var(--navy));
 
   color: var(--white);
 }
@@ -775,7 +750,7 @@ a {
   color: var(--white);
 }
 
-.section-heading-dark > p:last-child {
+.section-heading-dark>p:last-child {
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -839,8 +814,7 @@ a {
   display: grid;
 
   grid-template-columns:
-    minmax(0, 1.2fr)
-    minmax(320px, 0.8fr);
+    minmax(0, 1.2fr) minmax(320px, 0.8fr);
 
   align-items: center;
 
@@ -904,6 +878,31 @@ a {
 
 .button-light:hover {
   background: var(--off-white);
+}
+
+/* ------------------------------------------------------------
+   Electronic Complaints Book
+------------------------------------------------------------ */
+
+#livro-reclamacoes {
+  padding-block: 65px;
+}
+
+#livro-reclamacoes .section-heading {
+  margin-bottom: 30px;
+}
+
+#livro-reclamacoes .section-heading h2 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  line-height: 1.15;
+}
+
+#livro-reclamacoes .complaints-book p {
+  max-width: 650px;
+
+  margin: 0 0 24px;
+
+  color: var(--text-muted);
 }
 
 
@@ -1046,10 +1045,8 @@ a {
 @media (max-width: 600px) {
 
   .container {
-    width: min(
-      calc(100% - 32px),
-      var(--container)
-    );
+    width: min(calc(100% - 32px),
+        var(--container));
   }
 
   .section {
