@@ -947,6 +947,28 @@ a {
   margin: 0 0 3px;
 }
 
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px 18px;
+
+  margin: 8px 0 6px;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 0.78rem;
+
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-links a:hover {
+  color: var(--white);
+}
+
 
 /* ------------------------------------------------------------
    Responsive
